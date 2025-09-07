@@ -2,7 +2,7 @@
 
 SELECT *
 FROM properties 
-where id IN (
+where property_id IN (
     SELECT property_id
     FROM reviews
     GROUP BY property_id
