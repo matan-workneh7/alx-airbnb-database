@@ -2,7 +2,7 @@
 
 SELECT *
 FROM properties 
-where property_id IN (
+WHERE id IN (
     SELECT property_id
     FROM reviews
     GROUP BY property_id
@@ -14,7 +14,7 @@ ORDER BY property_id;
 
 SELECT *
 FROM users u
-where (
+WHERE (
     SELECT COUNT(*)
     FROM bookings b
     where b.user_id = u.id
