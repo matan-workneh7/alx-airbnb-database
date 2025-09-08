@@ -8,6 +8,7 @@ GROUP BY property_id
 
 SELECT property_id, total_bookings,
     ROW_NUMBER() OVER (ORDER BY total_bookings DESC) as booking_rank
+    RANK() OVER (ORDER BY total_bookings DESC) AS booking_rank
 FROM (
     SELECT property_id, COUNT(*) AS total_bookings
     From bookings
